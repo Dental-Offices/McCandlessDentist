@@ -1074,6 +1074,11 @@ body.service-page .hero__eyebrow {
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
+.service-detail-card {
+  display: flex;
+  align-items: stretch;
+}
+
 .service-detail-card:hover,
 .service-pricing-card:hover,
 .service-faq__item:hover {
@@ -1089,10 +1094,21 @@ body.service-page .hero__eyebrow {
   aspect-ratio: 4 / 3;
 }
 
+.service-detail-card__image {
+  flex: 0 0 40%;
+  height: auto;
+}
+
 .service-detail-card__body,
 .service-pricing-card__body,
 .service-faq__item {
   padding: 1.6rem;
+}
+
+.service-detail-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-detail-card__body h3,
