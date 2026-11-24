@@ -1063,6 +1063,129 @@ body.service-page .hero__eyebrow {
   gap: 1.5rem;
 }
 
+/* =============================================
+   TEAM SECTION
+   ============================================= */
+.team-section {
+  padding-block: 4rem 5rem;
+  background: linear-gradient(135deg, var(--clr-white) 0%, var(--clr-surface) 100%);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.team-card {
+  background: var(--clr-white);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.team-card__image-wrapper {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--clr-primary) 0%, var(--clr-primary-light) 100%);
+  aspect-ratio: 4 / 5;
+}
+
+.team-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.team-card:hover .team-card__image {
+  transform: scale(1.05);
+}
+
+.team-card__body {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+.team-card__name {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--clr-dark);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.team-card__title {
+  font-size: 0.95rem;
+  color: var(--clr-primary-light);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.team-card__content {
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+}
+
+.team-card__content p {
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.team-card__content p:first-child {
+  font-weight: 500;
+  color: var(--clr-text);
+}
+
+.team-card__content h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  color: var(--clr-dark);
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+}
+
+.team-card__content ul {
+  list-style: none;
+  margin-bottom: 1.2rem;
+  padding-left: 0;
+}
+
+.team-card__content li {
+  padding-left: 1.5rem;
+  position: relative;
+  margin-bottom: 0.6rem;
+  color: var(--clr-text-muted);
+  font-size: 0.95rem;
+}
+
+.team-card__content li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--clr-accent);
+  font-weight: bold;
+}
+
 .service-detail-card,
 .service-pricing-card,
 .service-faq__item {
@@ -1507,6 +1630,13 @@ body.service-page .hero__eyebrow {
     align-items: flex-start;
   }
   .footer__inner { grid-template-columns: 1fr 1fr; row-gap: 2.5rem; }
+
+  .team-card {
+    grid-template-columns: 1fr 1.2fr;
+  }
+  .team-card__image-wrapper {
+    aspect-ratio: 3 / 4;
+  }
 }
 
 @media (max-width: 768px) {
@@ -1569,6 +1699,20 @@ body.service-page .hero__eyebrow {
 
   .footer__inner { grid-template-columns: 1fr; gap: 2rem; padding-block: 3rem; }
   .footer__bottom-inner { flex-direction: column; text-align: center; }
+
+  .team-card {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .team-card__image-wrapper {
+    aspect-ratio: 16 / 9;
+  }
+  .team-card__body {
+    padding: 1.8rem;
+  }
+  .team-card__name {
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -1585,5 +1729,16 @@ body.service-page .hero__eyebrow {
 
   .header__phone {
     display: none !important;
+  }
+
+  .team-card__name {
+    font-size: 1.3rem;
+  }
+  .team-card__content h4 {
+    font-size: 0.9rem;
+  }
+  .team-card__content p,
+  .team-card__content li {
+    font-size: 0.9rem;
   }
 }
