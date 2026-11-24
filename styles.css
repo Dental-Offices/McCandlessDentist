@@ -1086,6 +1086,7 @@ body.service-page .hero__eyebrow {
   width: 100%;
   height: 260px;
   object-fit: cover;
+  aspect-ratio: 4 / 3;
 }
 
 .service-detail-card__body,
